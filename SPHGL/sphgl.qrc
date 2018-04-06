@@ -1,0 +1,17 @@
+<RCC>
+  <qresource prefix="SPHGL">
+    <file>Resources/output.png</file>
+    <file>Resources/show_dis_field.png</file>
+    <file>Resources/show_grid.png</file>
+    <file>Resources/show_particle.png</file>
+    <file>Resources/show_surface.png</file>
+    <file>Resources/start.png</file>
+    <file>Resources/stop.png</file>
+    <file>Resources/bam.png</file>
+    <file>Resources/water_pipe.png</file>
+    <file>Resources/action_2D.png</file>
+    <file>Resources/action_background.png</file>
+    <file>Resources/lock_view.png</file>
+    <file>Resources/unlock_view.png</file>
+  </qresource>
+</RCC>

@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SPHGLClass</class>
+ <widget class="QMainWindow" name="SPHGLClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>900</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>SPHGL</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <layout class="QVBoxLayout" name="baseLayout"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>900</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>开始</string>
+    </property>
+    <widget class="QMenu" name="menu_3">
+     <property name="title">
+      <string>场景</string>
+     </property>
+     <addaction name="actionWaterPipe"/>
+     <addaction name="actionBam"/>
+    </widget>
+    <addaction name="actionLock"/>
+    <addaction name="actionChange2D"/>
+    <addaction name="menu_3"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>关于</string>
+    </property>
+    <addaction name="actionAbout"/>
+   </widget>
+   <widget class="QMenu" name="menu_4">
+    <property name="title">
+     <string>控制</string>
+    </property>
+    <addaction name="actionStart"/>
+    <addaction name="actionStop"/>
+   </widget>
+   <widget class="QMenu" name="menu_5">
+    <property name="title">
+     <string>设置</string>
+    </property>
+    <addaction name="actionBackground"/>
+    <addaction name="actionNumParticles"/>
+    <addaction name="actionOutputFrame"/>
+   </widget>
+   <widget class="QMenu" name="menuSurface">
+    <property name="title">
+     <string>流体</string>
+    </property>
+    <addaction name="actionShowParticle"/>
+    <addaction name="actionDisField"/>
+    <addaction name="actionShowSurface"/>
+    <addaction name="actionShowGrid"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_4"/>
+   <addaction name="menuSurface"/>
+   <addaction name="menu_5"/>
+   <addaction name="menu_2"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionLock"/>
+   <addaction name="actionBackground"/>
+   <addaction name="actionChange2D"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QToolBar" name="modelToolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionWaterPipe"/>
+   <addaction name="actionBam"/>
+  </widget>
+  <widget class="QToolBar" name="controlToolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionStart"/>
+   <addaction name="actionStop"/>
+  </widget>
+  <widget class="QToolBar" name="displayToolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionShowParticle"/>
+   <addaction name="separator"/>
+   <addaction name="actionDisField"/>
+   <addaction name="actionShowSurface"/>
+   <addaction name="separator"/>
+   <addaction name="actionShowGrid"/>
+  </widget>
+  <widget class="QToolBar" name="ohterToolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionOutputFrame"/>
+  </widget>
+  <action name="actionLock">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="sphgl.qrc">
+     <normaloff>:/SPHGL/Resources/lock_view.png</normaloff>:/SPHGL/Resources/lock_view.png</iconset>
+   </property>
+   <property name="text">
+    <string>锁定</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionBackground">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="sphgl.qrc">
+     <normaloff>:/SPHGL/Resources/action_background.png</normaloff>:/SPHGL/Resources/action_background.png</iconset>
+   </property>
+   <property name="text">
+    <string>背景</string>
+   </property>
+  </action>
+  <action name="actionChange2D">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="sphgl.qrc">
+     <normaloff>:/SPHGL/Resources/action_2D.png</normaloff>:/SPHGL/Resources/action_2D.png</iconset>
+   </property>
+   <property name="text">
+    <string>2D</string>
+   </property>
+  </action>
+  <action name="actionBamBreak">
+   <property name="text">
+    <string>坝崩</string>
+   </property>
+  </action>
+  <action name="actionWaterPipe">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="sphgl.qrc">
+     <normaloff>:/SPHGL/Resources/water_pipe.png</normaloff>:/SPHGL/Resources/water_pipe.png</iconset>
+   </property>
+   <property name="text">
+    <string>水流</string>
+   </property>
+  </action>
+  <action name="actionBam">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="sphgl.qrc">
+     <normaloff>:/SPHGL/Resources/bam.png</normaloff>:/SPHGL/Resources/bam.png</iconset>
+   </property>
+   <property name="text">
+    <string>BamBreak</string>
+   </property>
+  </action>
+  <action name="actionStart">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="sphgl.qrc">
+     <normaloff>:/SPHGL/Resources/start.png</normaloff>:/SPHGL/Resources/start.png</iconset>
+   </property>
+   <property name="text">
+    <string>开始</string>
+   </property>
+  </action>
+  <action name="actionStop">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="sphgl.qrc">
+     <normaloff>:/SPHGL/Resources/stop.png</normaloff>:/SPHGL/Resources/stop.png</iconset>
+   </property>
+   <property name="text">
+    <string>停止</string>
+   </property>
+  </action>
+  <action name="actionNumParticles">
+   <property name="text">
+    <string>粒子数</string>
+   </property>
+  </action>
+  <action name="actionShowSurface">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="sphgl.qrc">
+     <normaloff>:/SPHGL/Resources/show_surface.png</normaloff>:/SPHGL/Resources/show_surface.png</iconset>
+   </property>
+   <property name="text">
+    <string>显示液面</string>
+   </property>
+  </action>
+  <action name="actionShowParticle">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="sphgl.qrc">
+     <normaloff>:/SPHGL/Resources/show_particle.png</normaloff>:/SPHGL/Resources/show_particle.png</iconset>
+   </property>
+   <property name="text">
+    <string>显示粒子</string>
+   </property>
+  </action>
+  <action name="actionDisField">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="sphgl.qrc">
+     <normaloff>:/SPHGL/Resources/show_dis_field.png</normaloff>:/SPHGL/Resources/show_dis_field.png</iconset>
+   </property>
+   <property name="text">
+    <string>显示距离场</string>
+   </property>
+  </action>
+  <action name="actionShowGrid">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="sphgl.qrc">
+     <normaloff>:/SPHGL/Resources/show_grid.png</normaloff>:/SPHGL/Resources/show_grid.png</iconset>
+   </property>
+   <property name="text">
+    <string>显示网格</string>
+   </property>
+  </action>
+  <action name="actionOutputFrame">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="sphgl.qrc">
+     <normaloff>:/SPHGL/Resources/output.png</normaloff>:/SPHGL/Resources/output.png</iconset>
+   </property>
+   <property name="text">
+    <string>输出帧</string>
+   </property>
+   <property name="toolTip">
+    <string>以文件的形式输出每帧</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="sphgl.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>actionLock</sender>
+   <signal>triggered()</signal>
+   <receiver>SPHGLClass</receiver>
+   <slot>onLockView()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionBackground</sender>
+   <signal>triggered()</signal>
+   <receiver>SPHGLClass</receiver>
+   <slot>onSetBackground()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionChange2D</sender>
+   <signal>triggered()</signal>
+   <receiver>SPHGLClass</receiver>
+   <slot>onChange2D()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionBam</sender>
+   <signal>triggered()</signal>
+   <receiver>SPHGLClass</receiver>
+   <slot>onBamBreak()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionWaterPipe</sender>
+   <signal>triggered()</signal>
+   <receiver>SPHGLClass</receiver>
+   <slot>onWaterPipe()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionStart</sender>
+   <signal>triggered()</signal>
+   <receiver>SPHGLClass</receiver>
+   <slot>onStart()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionStop</sender>
+   <signal>triggered()</signal>
+   <receiver>SPHGLClass</receiver>
+   <slot>onStop()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionNumParticles</sender>
+   <signal>triggered()</signal>
+   <receiver>SPHGLClass</receiver>
+   <slot>onSetNumParticles()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionShowSurface</sender>
+   <signal>triggered()</signal>
+   <receiver>SPHGLClass</receiver>
+   <slot>onShowSurface()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionShowParticle</sender>
+   <signal>triggered()</signal>
+   <receiver>SPHGLClass</receiver>
+   <slot>onShowParticle()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionDisField</sender>
+   <signal>triggered()</signal>
+   <receiver>SPHGLClass</receiver>
+   <slot>onShowDisField()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionShowGrid</sender>
+   <signal>triggered()</signal>
+   <receiver>SPHGLClass</receiver>
+   <slot>onShowHashGrid()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionOutputFrame</sender>
+   <signal>triggered()</signal>
+   <receiver>SPHGLClass</receiver>
+   <slot>onOutputFrame()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>onLockView()</slot>
+  <slot>onSetBackground()</slot>
+  <slot>onChange2D()</slot>
+  <slot>onBamBreak()</slot>
+  <slot>onWaterPipe()</slot>
+  <slot>onStart()</slot>
+  <slot>onStop()</slot>
+  <slot>onSetNumParticles()</slot>
+  <slot>onShowSurface()</slot>
+  <slot>onShowParticle()</slot>
+  <slot>onShowDisField()</slot>
+  <slot>onShowHashGrid()</slot>
+  <slot>onOutputFrame()</slot>
+ </slots>
+</ui>
