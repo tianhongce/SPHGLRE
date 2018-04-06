@@ -38,7 +38,7 @@ void ModelWidget::initWidget()
 	//设置参数
 	//ratio = 3.6 / pcisph.wBottle;//缩放比例
 	ratio = 1;
-	ballRadius = 0.028;	//粒子半径
+	ballRadius = 0.014;	//粒子半径
 	timeStep = 10;		//帧间隔,ms
 
 	lightPosition[0] = 0.0f;	//光源位置,xyz,dis
