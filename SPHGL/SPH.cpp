@@ -16,11 +16,11 @@ SPH::~SPH()
 void SPH::initParameter()
 {
 	GRAVITY.set(0, -9.8, 0);//重力系数
-	SMOOTH_RANGE = 0.10;//光滑核核半径
+	SMOOTH_RANGE = 0.112;//光滑核核半径
 	SMOOTH_RANGE2 = SMOOTH_RANGE * SMOOTH_RANGE;//光滑核半径的平方
 	REST_DENSITY = 1000.0;//平静时的密度
 	VISCOSITY = 0.35;//粘稠度系数
-	MASS = 0.128;
+	MASS = 0.1756;
 	RADIUS = 0.028;
 	TIME_STEP = 0.00025;
 
